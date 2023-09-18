@@ -2,7 +2,7 @@
 
 # CMPS 2200 Assignment 1
 
-**Name:**_________________________
+**Name:**__Simon Yung__
 
 
 In this assignment, you will learn more about asymptotic notation, parallelism, functional languages, and algorithmic cost models. As in the recitation, some of your answer will go here and some will go in `main.py`. You are welcome to edit this `assignment-01.md` file directly, or print and fill in by hand. If you do the latter, please scan to a file `assignment-01.pdf` and push to your github repository. 
@@ -12,35 +12,26 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 1. (2 pts ea) **Asymptotic notation** (12 pts)
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
-.  
-.  
-.  
-.  
-. 
+    -   No, The limit of these two functions results in C = 2 indicating it is $\Theta$.
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
-.  
-.  
-.  
-.  
-.  
+
+    -  No, $2^{2^n}$ grows much faster so it exceeds the worst case of $O(2^n)$
+
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
-.  
-.  
-.  
-.  
+
+    - No, as N grows towards infintiy n grows faster then $O(\mathrm{log}^2 n)$
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
-.  
-.  
-.  
-.  
+
+    - Yes, N grows faster then  $O(\mathrm{log}^2 n)$ therefore it is some $k * f(n)$
+
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
-.  
-.  
-.  
-.  
+
+    - No, As $\sqrt{n}$ approaches infinity it grows faster then $O((\mathrm{log} n)^3)$
+
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+  
+    - Yes, due to the same reasoning as above it is some $k *f(n)$
 
 
 2. **SPARC to Python** (12 pts)
@@ -62,14 +53,7 @@ $$
 
   - 2b. (6 pts) What does this function do, in your own words?  
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
+    -  This code creates a recursive stack adding up the preivous and second previous value calculating the fibonnaci number. 
   
 
 3. **Parallelism and recursion** (26 pts)
@@ -92,34 +76,18 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
 
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
+    - The work for this implementation is $O(n)$ the span is the same as the work
 
 
   - 3c. (7 pts) Next, implement a `longest_run_recursive`, a recursive, divide and conquer implementation. This is analogous to our implementation of `sum_list_recursive`. To do so, you will need to think about how to combine partial solutions from each recursive call. Make use of the provided class `Result`.   
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
-.  
 
-
+    - The work is $O(n)$, and the span is $O(\mathrm{log} n)$
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
+
+      - Work = $O(nlog(n))$
+      - Span =  $O(log(n))$
 
 .  
 .  
